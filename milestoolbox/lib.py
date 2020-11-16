@@ -4,7 +4,6 @@
 """
 import numpy as np
 import pandas as pd
-import matplotlib
 import requests
 from bs4 import BeautifulSoup
 
@@ -14,9 +13,9 @@ def stocks(url):
 
     apple_stock_df['date'] = pd.to_datetime(apple_stock_df['date'], format="%Y-%m-%d")
     apple_stock_df = apple_stock_df.set_index('date')
-    stock_history = apple_stock_df[['open', 'close', 'high', 'low']].plot(figsize=(12,4))
 
-    return stock_history
+
+    return apple_stock_df
 
 
 
