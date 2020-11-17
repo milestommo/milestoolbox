@@ -5,9 +5,13 @@ import os
 import milestoolbox
 import pandas as pd
 # Import from our lib
-from milestoolbox.lib import clean_data
 import pytest
+from milestoolbox.lib import stocks
 
+def test_stocks():
+    url = 'http://iex.lewagon.com/stable/stock/aapl/chart/3m'
+    apple = stocks(url)
+    assert isinstance(apple, pd.DataFrame)
 
 # def test_clean_data():
 #     datapath = os.path.dirname(os.path.abspath(milestoolbox.__file__)) + '/data'
